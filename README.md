@@ -1,27 +1,15 @@
-# CarLeasingCalculator
+# Car Leasing Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Features
 
-## Development server
+### Reactive Forms
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The application leverages Angular's ReactiveForms module to create dynamic and reactive form controls. This ensures that the form inputs are synchronized with the application's state, providing real-time feedback and validation.
 
-## Code scaffolding
+### Custom Input Form Components
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Custom input components are developed to enhance reusability and maintainability across the application. These components encapsulate specific input logic and styles, making it easy to manage and update form fields consistently. These components are from another personal project - https://github.com/rammer17/ng-is
 
-## Build
+### Observable Streams
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Observable streams are used extensively to manage asynchronous data operations and state changes. This allows the application to handle user interactions and data flow efficiently, ensuring a smooth and responsive user experience.
