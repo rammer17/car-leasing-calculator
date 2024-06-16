@@ -1,0 +1,87 @@
+<div
+  [formGroup]="leaseForm!"
+  class="container rounded bg-light p-4 mt-5"
+  style="width: 800px"
+>
+  <h2 class="text-center fw-bold">Car Leasing Calculator</h2>
+  <div class="row my-3">
+    <div class="col-12 col-md-6">
+      <app-form-dropdown
+        [formControlName]="'type'"
+        [data]="carTypeArr"
+        [placeholder]="'Car Type'"
+      ></app-form-dropdown>
+    </div>
+    <div class="col-12 col-md-6">
+      <app-form-dropdown
+        [formControlName]="'period'"
+        [data]="leasePeriodsArr"
+        [placeholder]="'Lease Period (months)'"
+      ></app-form-dropdown>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-12 col-md-6">
+      <div class="w-100 mb-2 fw-bold">
+        {{ "Car Value (€10,000 - €200,000)" }}
+      </div>
+      <input
+        class="is-input"
+        type="number"
+        [value]="leaseForm?.get('value')?.value"
+        (change)="onInputChange($event, 'value')"
+        formControlName="value"
+      />
+      <app-form-input
+        [formControlName]="'value'"
+        [min]="10000"
+        [max]="200000"
+        [type]="'range'"
+      ></app-form-input>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="w-100 mb-2 fw-bold">{{ "Down Payment (10% - 50%)" }}</div>
+      <input
+        class="is-input"
+        type="number"
+        [value]="leaseForm?.get('downPayment')?.value"
+        (change)="onInputChange($event, 'downPayment')"
+        formControlName="downPayment"
+      />
+      <app-form-input
+        [formControlName]="'downPayment'"
+        [min]="10"
+        [max]="50"
+        [type]="'range'"
+      ></app-form-input>
+    </div>
+  </div>
+  <hr />
+  <div class="row my-3">
+    <div class="col-12">
+      <h4 class="text-center fw-bold">Leasing Details</h4>
+    </div>
+  </div>
+  <div class="row my-3 fw-bold" *ngIf="vm$ | async as vm">
+    <div class="col-12 col-md-6">
+      <div>
+        Total leasing cost:
+        {{ vm.totalLeasingCost | currency : "EUR" : "symbol" : "1.2-2" }}
+      </div>
+      <div>
+        Down payment:
+        {{ vm.downPayment | currency : "EUR" : "symbol" : "1.2-2" }}
+      </div>
+    </div>
+    <div class="col-12 col-md-6 vertical-line">
+      <div>
+        Monthly installment:
+        {{ vm.monthlyPayment | currency : "EUR" : "symbol" : "1.2-2" }}
+      </div>
+      <div>
+        Interest rate:
+        {{ vm.interestRate }}%
+      </div>
+    </div>
+  </div>
+</div>

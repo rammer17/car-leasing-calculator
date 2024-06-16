@@ -1,0 +1,10 @@
+.vertical-line {
+  border-left: 1px solid rgb(182, 182, 182);
+}
+
+@media (max-width: 768px) {
+  .vertical-line {
+    border: none;
+    margin-top: 24px;
+  }
+}

@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+//Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(236, 236, 236);
+}
+
+:root {
+  --text-light: #fefefe;
+  --text-muted: #9f9f9f;
+  --text-medium: #414843;
+  --text-dark: #0d0d0d;
+  --text-accent: #0e6cca;
+
+  --primary-light: #ffffff;
+  --primary-medium: #f5f5f5;
+  --primary-dark: #48524a;
+  --primary-darker: #39463d;
+
+  --accent-light: #48524a;
+  --accent-dark: #48524a;
+
+  --border-radius: 12px;
+  --border-width: 1px;
+  --border-color: #4f5d542d;
+}
